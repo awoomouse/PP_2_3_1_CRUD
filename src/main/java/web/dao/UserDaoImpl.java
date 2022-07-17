@@ -24,9 +24,7 @@ public class UserDaoImpl implements UserDao {
 
     @Transactional
     public User getUser(long id) {
-        User user = (User)em.find(User.class, id);
-        em.detach(user);
-        return user;
+        return (User)em.find(User.class, id);
     }
 
     @Transactional
@@ -37,12 +35,10 @@ public class UserDaoImpl implements UserDao {
     @Transactional
     public void editUser(User user, long id) {
         User user1 = this.getUser(id);
-        em.detach(user1);
         user1.setFirstName(user.getFirstName());
         user1.setLastName(user.getLastName());
         user1.setAge(user.getAge());
         user1.setEmail(user.getEmail());
-        em.merge(user1);
     }
 
     public List<User> getAllUsers() {
