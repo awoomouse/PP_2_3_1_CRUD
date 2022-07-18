@@ -8,14 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(
-        name = "Users"
-)
+@Table(name = "Users")
 public class User {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String firstName;
     private String lastName;
@@ -84,7 +80,7 @@ public class User {
     }
 
     public int hashCode() {
-        return Objects.hash(new Object[]{this.id, this.firstName, this.lastName, this.age, this.email});
+        return Objects.hash(this.id);
     }
 
     public String toString() {
