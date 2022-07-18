@@ -3,6 +3,7 @@ package web.config;
 import java.util.EnumSet;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -28,6 +29,6 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     }
 
     public void registerHiddenFieldFilter(ServletContext servletContext) {
-        servletContext.addFilter("hiddenHttpMethodFilter", new HiddenHttpMethodFilter()).addMappingForUrlPatterns((EnumSet)null, true, new String[]{"/*"});
+        servletContext.addFilter("hiddenHttpMethodFilter", new HiddenHttpMethodFilter()).addMappingForUrlPatterns((EnumSet) null, true, new String[]{"/*"});
     }
 }

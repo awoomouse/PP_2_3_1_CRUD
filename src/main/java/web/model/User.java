@@ -72,7 +72,7 @@ public class User {
         if (this == o) {
             return true;
         } else if (o != null && this.getClass() == o.getClass()) {
-            User user = (User)o;
+            User user = (User) o;
             return this.id == user.id && this.age == user.age && Objects.equals(this.firstName, user.firstName) && Objects.equals(this.lastName, user.lastName) && Objects.equals(this.email, user.email);
         } else {
             return false;
