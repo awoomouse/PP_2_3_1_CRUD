@@ -22,9 +22,8 @@ public class UserDaoImpl implements UserDao {
         em.persist(user);
     }
 
-    @Transactional
     public User getUser(long id) {
-        return (User)em.find(User.class, id);
+        return em.find(User.class, id);
     }
 
     @Transactional
@@ -41,6 +40,7 @@ public class UserDaoImpl implements UserDao {
         user1.setEmail(user.getEmail());
     }
 
+    @SuppressWarnings("unchecked")
     public List<User> getAllUsers() {
         return em.createQuery("select user from User user").getResultList();
     }
