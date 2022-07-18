@@ -46,7 +46,7 @@ public class AppConfig {
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
         adapter.setShowSql(true);
         adapter.setGenerateDdl(false);
-        adapter.setDatabasePlatform("org.hibernate.dialect.H2Dialect");
+        adapter.setDatabasePlatform(this.env.getProperty("hibernate.dialect"));
         entityManagerFactoryBean.setJpaVendorAdapter(adapter);
         entityManagerFactoryBean.setPackagesToScan("web.model*");
         Properties properties = new Properties();
