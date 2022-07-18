@@ -22,7 +22,7 @@ public class UsersController {
     }
 
     @GetMapping("/users")
-    public String users(ModelMap model) {
+    public String showUsers(ModelMap model) {
         model.addAttribute("usersList", this.userDao.getAllUsers());
         return "users";
     }
