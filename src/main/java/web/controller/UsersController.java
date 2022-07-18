@@ -45,7 +45,7 @@ public class UsersController {
     }
 
     @GetMapping("users/{id}/update")
-    public String updateUser(ModelMap model, @PathVariable("id") long id) {
+    public String getUpdateUserForm(ModelMap model, @PathVariable("id") long id) {
         model.addAttribute("user", this.userDao.getUser(id));
         return "updateUser";
     }
